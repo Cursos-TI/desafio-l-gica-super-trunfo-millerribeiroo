@@ -89,7 +89,7 @@ int main() {
     // Certifique-se de que o sistema mostre claramente qual carta venceu e com base em qual atributo.
     int atributo;
     // Pede ao usuário que escolha o atributo a ser comparado
-    printf("Qual atributo deseja comparar?\n\n");
+    printf("Qual atributo deseja comparar?\nDigite apenas o número correspondente:\n\n");
     printf("1 - População\n");
     printf("2 - Área\n");
     printf("3 - PIB\n");
