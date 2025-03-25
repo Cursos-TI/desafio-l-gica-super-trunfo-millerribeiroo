@@ -18,6 +18,51 @@ int main() {
     float densi1, densi2;
     float pibpercap1, pibpercap2;
 
+    // Desafio Super Trunfo - Cidades
+    // Menu inicial:
+    // Exibe um menu para o usuário com as opções de jogar, ver as regras ou sair do jogo.
+
+    int opcao;
+    printf("Bem-vindo ao Super Trunfo - Cidades!\n\n");
+    printf("Escolha uma opção:\n\n");
+    printf("1 - Jogar\n");
+    printf("2 - Ver as regras\n");
+    printf("3 - Sair\n");
+    printf("Opção: ");
+    scanf(" %d", &opcao);
+
+    // Implementação do menu:
+    // Estruturas de decisão para verificar a opção escolhida pelo usuário.
+    // Utilize o comando switch para verificar a opção escolhida e chame as funções correspondentes.
+    // Caso o usuário escolha uma opção inválida, exiba uma mensagem de erro.
+
+    switch (opcao) {
+        case 1:
+            printf("\nVamos jogar!\n\n\n");
+            break;
+        case 2:
+            printf("Regras do jogo:\n\n");
+            printf("OBJETIVO: \n");
+            printf("O Super Trunfo é um jogo de cartas em que cada carta possui atributos numéricos;\n");
+            printf("O objetivo é comparar os atributos das cartas. O jogador que marcar 2 pontos vence.\n\n");
+            printf("COMO JOGAR:\n");
+            printf("Cada jogador registra sua carta de cidade;\n");
+            printf("Depois cada jogador deverá escolher 2 atributos em sua carta para comparar;\n");
+            printf("O maior valor de atributo ganha, com excessão do atributo 'Densidade Populacional', neste o menor valor é o vencedor;\n");
+            printf("Cada atributo vencedor marca um ponto.\n\n");
+            printf("FIM DE JOGO:\n");
+            printf("Ganha o jogador que efetuar 2 pontos na rodada.\n");
+            printf("Em caso de empate, os atributos escolhidos serão somados e o maior valor vence.\n");
+            printf("Se a soma dos atributos for empate, então fim de jogo. Essa rodada não teve vencedores. \n\n\n");
+            break;
+        case 3:
+            printf("Até a próxima!\n\n\n");
+            return 0;
+        default:
+            printf("Opção inválida. Tente novamente.\n\n\n");
+            break;
+    }
+
     // Cadastro das Cartas:
     // Implemente a lógica para solicitar ao usuário que insira os dados das cidades
     // utilizando a função scanf para capturar as entradas.
@@ -107,8 +152,8 @@ int main() {
                 printf("Rio de Janeiro (RJ): %lu habitantes\n", pop2);
                 printf("São Paulo venceu!\n");
             } else if (pop1 == pop2){
-                printf("São Paulo (SP): %.2f pontos de superpoder. \n", pop1);
-                printf("Rio de Janeiro (RJ): %.2f pontos de superpoder.  \n", pop2);
+                printf("São Paulo (SP): %lu habitantes. \n", pop1);
+                printf("Rio de Janeiro (RJ): %lu habitantes.  \n", pop2);
                 printf("Empate!\n");
             }else {
                 printf("São Paulo (SP): %lu habitantes\n", pop1);
@@ -122,8 +167,8 @@ int main() {
                 printf("Rio de Janeiro (RJ): %.2f km² de área. \n", area2);
                 printf("São Paulo venceu!\n");
             } else if (area1 == area2){
-                printf("São Paulo (SP): %.2f pontos de superpoder. \n", area1);
-                printf("Rio de Janeiro (RJ): %.2f pontos de superpoder.  \n", area2);
+                printf("São Paulo (SP): %.2f km² de área. \n", area1);
+                printf("Rio de Janeiro (RJ): %.2f km² de área.  \n", area2);
                 printf("Empate!\n");
             }else {
                 printf("São Paulo (SP): %.2f km² de área. \n", area1);
@@ -137,8 +182,8 @@ int main() {
                 printf("Rio de Janeiro (RJ): PIB de R$%ld\n", pib2);
                 printf("São Paulo venceu!\n");
             } else if (pib1 == pib2){
-                printf("São Paulo (SP): %.2f pontos de superpoder. \n", pib1);
-                printf("Rio de Janeiro (RJ): %.2f pontos de superpoder.  \n", pib2);
+                printf("São Paulo (SP): PIB de R$%ld\n", pib1);
+                printf("Rio de Janeiro (RJ): PIB de R$%ld\n", pib2);
                 printf("Empate!\n");
             }else {
                 printf("São Paulo (SP): PIB de R$%ld\n", pib1);
@@ -148,12 +193,12 @@ int main() {
             break;
         case 4:
             if (pontos1 > pontos2) {
-                printf("São Paulo (SP): %d pontos turísticos\n", pontos1);
-                printf("Rio de Janeiro (RJ): %d pontos turísticos\n", pontos2);
+                printf("São Paulo (SP): %d pontos turísticos. \n", pontos1);
+                printf("Rio de Janeiro (RJ): %d pontos turísticos. \n", pontos2);
                 printf("São Paulo venceu!\n");
             } else if (pontos1 == pontos2){
-                printf("São Paulo (SP): %.2f pontos de superpoder. \n", pontos1);
-                printf("Rio de Janeiro (RJ): %.2f pontos de superpoder.  \n", pontos2);
+                printf("São Paulo (SP): %d pontos turísticos. \n", pontos1);
+                printf("Rio de Janeiro (RJ): %d pontos turísticos.  \n", pontos2);
                 printf("Empate!\n");
             }else {
                 printf("São Paulo (SP): %d pontos turísticos\n", pontos1);
@@ -162,13 +207,13 @@ int main() {
             }
             break;
         case 5:
-            if (densi1 > densi2) {
-                printf("São Paulo (SP): %.2f hab/km²\n", densi1);
-                printf("Rio de Janeiro (RJ): %.2f hab/km²\n", densi2);
+            if (densi1 < densi2) { // Lógica inversa para densidade populacional
+                printf("São Paulo (SP): %.2f hab/km². \n", densi1);
+                printf("Rio de Janeiro (RJ): %.2f hab/km². \n", densi2);
                 printf("São Paulo venceu!\n");
             } else if (densi1 == densi2) {
-                printf("São Paulo (SP): %.2f pontos de superpoder. \n", densi1);
-                printf("Rio de Janeiro (RJ): %.2f pontos de superpoder.  \n", densi2);
+                printf("São Paulo (SP): %.2f hab/km². \n", densi1);
+                printf("Rio de Janeiro (RJ): %.2f hab/km².  \n", densi2);
                 printf("Empate!\n");
             }else {
                 printf("São Paulo (SP): %.2f hab/km²\n", densi1);
@@ -178,12 +223,12 @@ int main() {
             break;
         case 6:
             if (pibpercap1 > pibpercap2) {
-                printf("São Paulo (SP): PIB per capta de R$%.2f\n", pibpercap1);
-                printf("Rio de Janeiro (RJ): PIB per capta de R$%.2f\n", pibpercap2);
+                printf("São Paulo (SP): PIB per capta de R$%.2f. \n", pibpercap1);
+                printf("Rio de Janeiro (RJ): PIB per capta de R$%.2f. \n", pibpercap2);
                 printf("São Paulo venceu!\n");
             } else if (pibpercap1 == pibpercap2){
-                printf("São Paulo (SP): %.2f pontos de superpoder. \n", pibpercap1);
-                printf("Rio de Janeiro (RJ): %.2f pontos de superpoder.  \n", pibpercap2);
+                printf("São Paulo (SP): PIB per capta de R$%.2f. \n", pibpercap1);
+                printf("Rio de Janeiro (RJ): PIB per capta de R$%.2f. \n", pibpercap2);
                 printf("Empate!\n");
             }else {
                 printf("São Paulo (SP): PIB per capta de R$%.2f\n", pibpercap1);
