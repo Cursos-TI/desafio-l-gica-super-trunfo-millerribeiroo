@@ -70,7 +70,7 @@ int main()
     // utilizando a função scanf para capturar as entradas.
     // utilize o código do primeiro desafio
 
-    printf("Insira as informações das 2 cartas que irão competir.\nComeçando pela carta 1:\n");
+    printf("Insira as informações das 2 cartas que irão competir.\nJogador 1 começando pela Carta 1:\n");
     printf("Qual a letra do estado?\n"); // Pede ao usuário a letra do estado
     scanf(" %c", &estado1);              // A
 
@@ -92,8 +92,8 @@ int main()
     printf("Qual o número de pontos turísticos da cidade?\n"); // Pede ao usuário o número de pontos turísticos da cidade
     scanf(" %d", &pontos1);                                    // 36
 
-    // Repetindo o processo para a carta 2:
-    printf("\nAgora, vamos inserir a carta 2:\n");
+    // Repetindo o processo para a %s:
+    printf("\nJogador 2 agora vamos inserir a Carta 2:\n");
     printf("Qual a letra do estado?\n");
     scanf(" %c", &estado2); // B
 
@@ -197,6 +197,7 @@ int main()
         valor1Carta2 = pibpercap2;
         break;
     }
+    
 
     // Comparação do segundo atributo
     switch (atributo2) {
@@ -246,63 +247,94 @@ int main()
         somaCarta2 += valor2Carta2;
     }
 
+
     // Exibição dos resultados
     printf("\nResultado da comparação:\n");
 
     // Exibição do primeiro atributo
     switch (atributo1) {
     case 1: // População (unsigned long int)
-        printf("Atributo 1: %lu Habitantes (Carta 1) vs %lu Habitantes (Carta 2)\n", (unsigned long int)valor1Carta1, (unsigned long int)valor1Carta2);
+        printf("Atributo 1 - População: %lu Habitantes (%s) vs %lu Habitantes (%s)\n", (unsigned long int)valor1Carta1, cidade1, (unsigned long int)valor1Carta2, cidade2);
         break;
     case 2: // Área (float)
-        printf("Atributo 1: %.2fKm2 (Carta 1) vs %.2fkm2 (Carta 2)\n", valor1Carta1, valor1Carta2);
+        printf("Atributo 1 - Área: %.2fKm2 (%s) vs %.2fkm2 (%s)\n", valor1Carta1, cidade1, valor1Carta2, cidade2);
         break;
     case 3: // PIB (long int)
-        printf("Atributo 1: R$%ld (Carta 1) vs R$%ld (Carta 2)\n", (long int)valor1Carta1, (long int)valor1Carta2);
+        printf("Atributo 1 - PIB R$%ld (%s) vs R$%ld (%s)\n", (long int)valor1Carta1, cidade1, (long int)valor1Carta2, cidade2);
         break;
     case 4: // Pontos turísticos (int)
-        printf("Atributo 1: %d Pontos Turísticos (Carta 1) vs %d Pontos Turísticos (Carta 2)\n", (int)valor1Carta1, (int)valor1Carta2);
+        printf("Atributo 1 - Pontos Turísticos: %d Pontos Turísticos (%s) vs %d Pontos Turísticos (%s)\n", (int)valor1Carta1, cidade1, (int)valor1Carta2), cidade2;
         break;
     case 5: // Densidade populacional (float)
-        printf("Atributo 1: %.2f Hab/Km2 (Carta 1) vs %.2f Hab/Km2 (Carta 2)\n", valor1Carta1, valor1Carta2);
+        printf("Atributo 1 - Densidade Populacional: %.2f Hab/Km2 (%s) vs %.2f Hab/Km2 (%s)\n", valor1Carta1, cidade1, valor1Carta2, cidade2);
         break;
     case 6: // PIB per capita (float)
-        printf("Atributo 1: R$%.2f (Carta 1) vs R$%.2f (Carta 2)\n", valor1Carta1, valor1Carta2);
+        printf("Atributo 1 - PIB Percapta R$%.2f (%s) vs R$%.2f (%s)\n", valor1Carta1, cidade1, valor1Carta2, cidade2);
         break;
+    }
+
+    // Verificação do vencedor da primeira rodada:
+    if (valor1Carta1 > valor1Carta2) {
+        resultado1++;
+        printf("\n\n%s venceu a primeira rodada!\n\n" , cidade1);
+    } else if (valor1Carta2 > valor1Carta1) {
+        resultado2++;
+        printf("\n\n%s venceu a primeira rodada!\n\n" , cidade2);
+    } else {
+        printf("\n\nEmpate!\n\n");
     }
 
     // Exibição do segundo atributo
     switch (atributo2) {
     case 1: // População (unsigned long int)
-        printf("Atributo 2: %lu Habitantes (Carta 1) vs %lu Habitantes (Carta 2)\n", (unsigned long int)valor2Carta1, (unsigned long int)valor2Carta2);
+        printf("Atributo 2 - População: %lu Habitantes (%s) vs %lu Habitantes (%s)\n", (unsigned long int)valor2Carta1, cidade1, (unsigned long int)valor2Carta2, cidade2);
         break;
     case 2: // Área (float)
-        printf("Atributo 2: %.2f Km2 (Carta 1) vs %.2f Km2 (Carta 2)\n", valor2Carta1, valor2Carta2);
+        printf("Atributo 2 - Área: %.2f Km2 (%s) vs %.2f Km2 (%s)\n", valor2Carta1, cidade1, valor2Carta2, cidade2);
         break;
     case 3: // PIB (long int)
-        printf("Atributo 2: R$%ld (Carta 1) vs R$%ld (Carta 2)\n", (long int)valor2Carta1, (long int)valor2Carta2);
+        printf("Atributo 2 - PIB: R$%ld (%s) vs R$%ld (%s)\n", (long int)valor2Carta1, cidade1, (long int)valor2Carta2, cidade2);
         break;
     case 4: // Pontos turísticos (int)
-        printf("Atributo 2: %d Pontos Turísticos (Carta 1) vs %d Pontos Turísticos (Carta 2)\n", (int)valor2Carta1, (int)valor2Carta2);
+        printf("Atributo 2 - Pontos Turísticos: %d Pontos Turísticos (%s) vs %d Pontos Turísticos (%s)\n", (int)valor2Carta1, cidade1, (int)valor2Carta2, cidade2);
         break;
     case 5: // Densidade populacional (float)
-        printf("Atributo 2: %.2f Hab/Km2 (Carta 1) vs %.2f Hab/Km2 (Carta 2)\n", valor2Carta1, valor2Carta2);
+        printf("Atributo 2 - Densidade Populacional: %.2f Hab/Km2 (%s) vs %.2f Hab/Km2 (%s)\n", valor2Carta1, cidade1, valor2Carta2, cidade2);
         break;
     case 6: // PIB per capita (float)
-        printf("Atributo 2: R$%.2f (Carta 1) vs R$%.2f (Carta 2)\n", valor2Carta1, valor2Carta2);
+        printf("Atributo 2 - PIB Percapta: R$%.2f (%s) vs R$%.2f (%s)\n", valor2Carta1, cidade1, valor2Carta2, cidade2);
         break;
     }
 
-    // Exibição da soma dos atributos
-    printf("Soma dos atributos: %.2f (Carta 1) vs %.2f (Carta 2)\n", somaCarta1, somaCarta2);
-
-    // Determinação do vencedor
-    if (somaCarta1 > somaCarta2) {
-        printf("\nCarta 1 venceu a rodada!\n");
-    } else if (somaCarta2 > somaCarta1) {
-        printf("\nCarta 2 venceu a rodada!\n");
+    // Verificação do vencedor da segunda rodada:
+    if (valor2Carta1 > valor2Carta2) {
+        resultado1++;
+        printf("%s venceu a segunda rodada!\n\n" , cidade1);
+    } else if (valor2Carta2 > valor2Carta1) {
+        resultado2++;
+        printf("%s venceu a segunda rodada!\n\n" , cidade2);
     } else {
-        printf("\nEmpate!\n");
+        printf("Empate!\n\n");
+    }
+
+    // Critério de Desempate
+    if (resultado1 == resultado2) {
+        printf("Soma dos atributos: %.2f (%s) vs %.2f (%s)\n", somaCarta1, cidade1, somaCarta2, cidade2);
+
+        // Determinação do vencedor
+        if (somaCarta1 > somaCarta2) {
+            printf("\n\n%s venceu a rodada!\n\n", cidade1);
+        } else if (somaCarta2 > somaCarta1) {
+            printf("\n\n%s venceu a rodada!\n\n", cidade2);
+        } else {
+            printf("\n\nEmpate!\n\n");
+        }
+    } else {
+        if (resultado1 > resultado2) {
+            printf("\n\n%s é a cidade VENCEDORA!!\n\n", cidade1);
+        } else {
+            printf("\n\n%s é a cidade VENCEDORA!!\n\n", cidade2);
+        }
     }
 
     return 0;
