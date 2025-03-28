@@ -254,22 +254,22 @@ int main()
     // Exibição do primeiro atributo
     switch (atributo1) {
     case 1: // População (unsigned long int)
-        printf("Atributo 1 - População: %lu Habitantes (%s) vs %lu Habitantes (%s)\n", (unsigned long int)valor1Carta1, cidade1, (unsigned long int)valor1Carta2, cidade2);
+        printf("Atributo 1 - População: \n%lu Habitantes (%s) \nvs \n%lu Habitantes (%s)\n", (unsigned long int)valor1Carta1, cidade1, (unsigned long int)valor1Carta2, cidade2);
         break;
     case 2: // Área (float)
-        printf("Atributo 1 - Área: %.2fKm2 (%s) vs %.2fkm2 (%s)\n", valor1Carta1, cidade1, valor1Carta2, cidade2);
+        printf("Atributo 1 - Área: \n%.2fKm2 (%s) \nvs \n%.2fkm2 (%s)\n", valor1Carta1, cidade1, valor1Carta2, cidade2);
         break;
     case 3: // PIB (long int)
-        printf("Atributo 1 - PIB R$%ld (%s) vs R$%ld (%s)\n", (long int)valor1Carta1, cidade1, (long int)valor1Carta2, cidade2);
+        printf("Atributo 1 - PIB: \nR$%ld (%s) \nvs \nR$%ld (%s)\n", (long int)valor1Carta1, cidade1, (long int)valor1Carta2, cidade2);
         break;
     case 4: // Pontos turísticos (int)
-        printf("Atributo 1 - Pontos Turísticos: %d Pontos Turísticos (%s) vs %d Pontos Turísticos (%s)\n", (int)valor1Carta1, cidade1, (int)valor1Carta2), cidade2;
+        printf("Atributo 1 - Pontos Turísticos: \n%d Pontos Turísticos (%s) \nvs \n%d Pontos Turísticos (%s)\n", (int)valor1Carta1, cidade1, (int)valor1Carta2), cidade2;
         break;
     case 5: // Densidade populacional (float)
-        printf("Atributo 1 - Densidade Populacional: %.2f Hab/Km2 (%s) vs %.2f Hab/Km2 (%s)\n", valor1Carta1, cidade1, valor1Carta2, cidade2);
+        printf("Atributo 1 - Densidade Populacional: \n%.2f Hab/Km2 (%s) \nvs \n%.2f Hab/Km2 (%s)\n", valor1Carta1, cidade1, valor1Carta2, cidade2);
         break;
     case 6: // PIB per capita (float)
-        printf("Atributo 1 - PIB Percapta R$%.2f (%s) vs R$%.2f (%s)\n", valor1Carta1, cidade1, valor1Carta2, cidade2);
+        printf("Atributo 1 - PIB Percapta: \nR$%.2f (%s) \nvs \nR$%.2f (%s)\n", valor1Carta1, cidade1, valor1Carta2, cidade2);
         break;
     }
 
@@ -287,22 +287,22 @@ int main()
     // Exibição do segundo atributo
     switch (atributo2) {
     case 1: // População (unsigned long int)
-        printf("Atributo 2 - População: %lu Habitantes (%s) vs %lu Habitantes (%s)\n", (unsigned long int)valor2Carta1, cidade1, (unsigned long int)valor2Carta2, cidade2);
+        printf("Atributo 2 - População: \n%lu Habitantes (%s) \nvs \n%lu Habitantes (%s)\n", (unsigned long int)valor2Carta1, cidade1, (unsigned long int)valor2Carta2, cidade2);
         break;
     case 2: // Área (float)
-        printf("Atributo 2 - Área: %.2f Km2 (%s) vs %.2f Km2 (%s)\n", valor2Carta1, cidade1, valor2Carta2, cidade2);
+        printf("Atributo 2 - Área: \n%.2f Km2 (%s) \nvs \n%.2f Km2 (%s)\n", valor2Carta1, cidade1, valor2Carta2, cidade2);
         break;
     case 3: // PIB (long int)
-        printf("Atributo 2 - PIB: R$%ld (%s) vs R$%ld (%s)\n", (long int)valor2Carta1, cidade1, (long int)valor2Carta2, cidade2);
+        printf("Atributo 2 - PIB: \nR$%ld (%s) \nvs \nR$%ld (%s)\n", (long int)valor2Carta1, cidade1, (long int)valor2Carta2, cidade2);
         break;
     case 4: // Pontos turísticos (int)
-        printf("Atributo 2 - Pontos Turísticos: %d Pontos Turísticos (%s) vs %d Pontos Turísticos (%s)\n", (int)valor2Carta1, cidade1, (int)valor2Carta2, cidade2);
+        printf("Atributo 2 - Pontos Turísticos: \n%d Pontos Turísticos (%s) \nvs \n%d Pontos Turísticos (%s)\n", (int)valor2Carta1, cidade1, (int)valor2Carta2, cidade2);
         break;
     case 5: // Densidade populacional (float)
-        printf("Atributo 2 - Densidade Populacional: %.2f Hab/Km2 (%s) vs %.2f Hab/Km2 (%s)\n", valor2Carta1, cidade1, valor2Carta2, cidade2);
+        printf("Atributo 2 - Densidade Populacional: \n%.2f Hab/Km2 (%s) \nvs \n%.2f Hab/Km2 (%s)\n", valor2Carta1, cidade1, valor2Carta2, cidade2);
         break;
     case 6: // PIB per capita (float)
-        printf("Atributo 2 - PIB Percapta: R$%.2f (%s) vs R$%.2f (%s)\n", valor2Carta1, cidade1, valor2Carta2, cidade2);
+        printf("Atributo 2 - PIB Percapta: \nR$%.2f (%s) \nvs \nR$%.2f (%s)\n", valor2Carta1, cidade1, valor2Carta2, cidade2);
         break;
     }
 
@@ -319,7 +319,7 @@ int main()
 
     // Critério de Desempate
     if (resultado1 == resultado2) {
-        printf("Soma dos atributos: %.2f (%s) vs %.2f (%s)\n", somaCarta1, cidade1, somaCarta2, cidade2);
+        printf("Soma dos atributos: \n%.2f (%s) \nvs \n%.2f (%s)\n", somaCarta1, cidade1, somaCarta2, cidade2);
 
         // Determinação do vencedor
         if (somaCarta1 > somaCarta2) {
